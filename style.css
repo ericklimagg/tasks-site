@@ -1,0 +1,45 @@
+body{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbsqzXKG5ssUnO7ZVM4cpF83I7ZyRogOAjPuMzcZc2fYcRva_0anY2RMgrM5B_q8wrpOI&usqp=CAU');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 700px;
+    background-size: 30%;
+}
+
+header {
+    background-color: aqua;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex; /* Flexbox para organizar os itens em linha */
+    justify-content: space-between; /* Espaça os itens entre as extremidades */
+    align-items: center; /* Alinha verticalmente no centro */
+    padding: 0 10px;
+    font-family: 'Rock Salt', cursive;
+    font-size: 35px;
+}
+
+h1{
+    font-size: 35px;
+}
+
+h1, #timer{
+    margin: 0; /* Remove margens extras */
+    list-style: none; /* Remove o estilo de lista (caso necessário) */
+    font-size: inherit;
+}
+
+#history{
+    margin: 0; /* Remove margens extras */
+    list-style: none; /* Remove o estilo de lista (caso necessário) */
+    font-size: inherit;
+}
+
+#contact{
+    margin: 0; /* Remove margens extras */
+    list-style: none; /* Remove o estilo de lista (caso necessário) */
+    font-size: inherit;
+}
+
+
