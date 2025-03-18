@@ -4,17 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/alarme.css">
 </head>
 <body>
   <header>
     <img class="img_header" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/640px-Hamburger_icon.svg.png" alt="">
     <div class="in_line">
-    <img class="img_header" id="img_perfil" src="https://static-00.iconduck.com/assets.00/user-icon-2046x2048-9pwm22pp.png" alt="">
-    <h1><a href="#">tasks.com</a></h1>
-  </div>
+      <img class="img_header" id="img_perfil" src="https://static-00.iconduck.com/assets.00/user-icon-2046x2048-9pwm22pp.png" alt="">
+      <h1><a href="#">tasks.com</a></h1>
+    </div>
   </header>
-
+  <main>
+    <div class="alarm-container">
+      <div class="time-display">
+          <div class="time-unit">
+              <div class="arrow arrow-up">▲</div>
+              <span id="hours">12</span>
+              <div class="arrow arrow-down">▼</div>
+          </div>
+          <span>:</span>
+          <div class="time-unit">
+              <div class="arrow arrow-up">▲</div>
+              <span id="minutes">00</span>
+              <div class="arrow arrow-down">▼</div>
+          </div>
+          <span>:</span>
+          <div class="time-unit">
+              <div class="arrow arrow-up">▲</div>
+              <span id="seconds">00</span>
+              <div class="arrow arrow-down">▼</div>
+          </div>
+      </div>
+      <button id="setAlarmButton">Ativar Alarme</button>
+      <button id="stopAlarmButton">Parar</button> 
+    </div>
+  </main>
   <footer>
     <div class="footer-content">
       <p>&copy; 2025 Todos os direitos reservados.</p>
@@ -24,5 +49,8 @@
       </ul>
     </div>
   </footer>
+
+  <script src="js/alarm.js"></script>
+
 </body>
 </html>
