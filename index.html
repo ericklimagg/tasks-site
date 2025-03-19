@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Temporizador</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/alarme.css">
 </head>
@@ -15,31 +15,24 @@
       <h1><a href="#">tasks.com</a></h1>
     </div>
   </header>
-  <main>
-    <div class="alarm-container">
-      <div class="time-display">
-          <div class="time-unit">
-              <div class="arrow arrow-up">▲</div>
-              <span id="hours">12</span>
-              <div class="arrow arrow-down">▼</div>
-          </div>
-          <span>:</span>
-          <div class="time-unit">
-              <div class="arrow arrow-up">▲</div>
-              <span id="minutes">00</span>
-              <div class="arrow arrow-down">▼</div>
-          </div>
-          <span>:</span>
-          <div class="time-unit">
-              <div class="arrow arrow-up">▲</div>
-              <span id="seconds">00</span>
-              <div class="arrow arrow-down">▼</div>
-          </div>
-      </div>
-      <button id="setAlarmButton">Ativar Alarme</button>
-      <button id="stopAlarmButton">Parar</button> 
+
+  <div class="alarm-container">
+    <div class="time-display">
+        <div class="time-unit">
+            <div class="arrow arrow-up">▲</div>
+            <span id="minutes">25</span>
+            <div class="arrow arrow-down">▼</div>
+        </div>
+        <span>:</span>
+        <div class="time-unit">
+            <div class="arrow arrow-up">▲</div>
+            <span id="seconds">00</span>
+            <div class="arrow arrow-down">▼</div>
+        </div>
     </div>
-  </main>
+    <button id="toggleAlarmButton">Ativar Alarme</button>
+  </div>
+
   <footer>
     <div class="footer-content">
       <p>&copy; 2025 Todos os direitos reservados.</p>
@@ -51,6 +44,5 @@
   </footer>
 
   <script src="js/alarm.js"></script>
-
 </body>
 </html>
