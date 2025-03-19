@@ -1,0 +1,117 @@
+.alarm-container {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #0f0;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    width: 320px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; 
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    width: 70px;
+}
+
+.time-unit span {
+    padding: 5px;
+}
+
+.arrow {
+    font-size: 30px;
+    cursor: pointer;
+    color: #ff5722;
+}
+
+.arrow:hover {
+    color: #e64a19;
+}
+
+.alarm-container button {
+    margin-top: 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.alarm-container button:hover {
+    background-color: #e64a19;
+}
+.alarm-container button {
+    margin-top: 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px; 
+}
+
+.alarm-container button:hover {
+    background-color: #e64a19;
+}
+
+#stopAlarmButton {
+    background-color: #f44336; 
+}
+
+#stopAlarmButton:hover {
+    background-color: #d32f2f; 
+}
+#toggleAlarmButton {
+    margin-top: 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+#toggleAlarmButton.running {
+    background-color: #f44336; /* Vermelho quando está rodando */
+}
+
+#toggleAlarmButton:hover {
+    background-color: #e64a19;
+}
+
+#toggleAlarmButton.running:hover {
+    background-color: #d32f2f;
+}
+
+
+
