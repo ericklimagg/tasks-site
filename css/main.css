@@ -1,0 +1,19 @@
+.alarm-container {
+  text-align: center;
+}
+
+.time-display {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrow {
+  cursor: pointer;
+}

@@ -1,37 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temporizador</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/alarme.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/newtask.css">
+    <link rel="stylesheet" href="css/taskdeadline.css">
 </head>
+
 <body>
+
   <header>
-    <img class="img_header" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/640px-Hamburger_icon.svg.png" alt="">
+    <h1><a href="index.html">Tasks</a></h1>
     <div class="in_line">
       <img class="img_header" id="img_perfil" src="https://static-00.iconduck.com/assets.00/user-icon-2046x2048-9pwm22pp.png" alt="">
-      <h1><a href="#">tasks.com</a></h1>
     </div>
   </header>
 
-  <div class="alarm-container">
-    <div class="time-display">
-        <div class="time-unit">
-            <div class="arrow arrow-up">▲</div>
-            <span id="minutes">25</span>
-            <div class="arrow arrow-down">▼</div>
-        </div>
-        <span>:</span>
-        <div class="time-unit">
-            <div class="arrow arrow-up">▲</div>
-            <span id="seconds">00</span>
-            <div class="arrow arrow-down">▼</div>
-        </div>
+  <main>
+
+    <div class="new-task-container">
+      <button id="novaTaskButton">Nova Task</button>
     </div>
-    <button id="toggleAlarmButton">Ativar Alarme</button>
+      
+    <div id="tasksContainer"></div>
+
+    <div class="alarm-container">
+      <div class="time-display">
+          <div class="time-unit">
+              <div class="arrow arrow-up">▲</div>
+              <span id="minutes">25</span>
+              <div class="arrow arrow-down">▼</div>
+          </div>
+          <span>:</span>
+          <div class="time-unit">
+              <div class="arrow arrow-up">▲</div>
+              <span id="seconds">00</span>
+              <div class="arrow arrow-down">▼</div>
+          </div>
+      </div>
+      <button id="toggleAlarmButton">Ativar Alarme</button>
+    </div>
+
+    <!-- Parte de TaskDeadline -->
+<div class="taskdeadline-container">
+  <!-- Coluna: Próximos 6 dias -->
+  <div class="taskdeadline-column" id="next-days">
+      <h3>Próximos 6 Dias</h3>
+      <ul id="tasks-next-days">
+          <!-- Aqui vão as tarefas filtradas para os próximos 6 dias -->
+      </ul>
   </div>
+
+  <!-- Coluna: Este Mês -->
+  <div class="taskdeadline-column" id="this-month">
+      <h3>Este Mês</h3>
+      <ul id="tasks-this-month">
+          <!-- Aqui vão as tarefas filtradas para este mês -->
+      </ul>
+  </div>
+
+  <!-- Coluna: Próximos Meses -->
+  <div class="taskdeadline-column" id="next-months">
+      <h3>Próximos Meses</h3>
+      <ul id="tasks-next-months">
+          <!-- Aqui vão as tarefas filtradas para os próximos meses -->
+      </ul>
+  </div>
+</div>
+
+</main>
 
   <footer>
     <div class="footer-content">
@@ -44,5 +88,7 @@
   </footer>
 
   <script src="js/alarm.js"></script>
+  <script src="js/newtask.js"></script>
+  <script src="js/taskstorage.js"></script>
 </body>
 </html>

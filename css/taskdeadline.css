@@ -1,0 +1,36 @@
+.taskdeadline-container {
+  background-color: rgb(252, 195, 72); /* Cor de fundo mais suave para o container */
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  margin-top: 240px;
+  position: relative;
+  z-index: 1px;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+}
+
+.taskdeadline-column {
+  background-color: rgb(255, 174, 0); /* Um laranja bem suave, em tons claros */
+  padding: 12px;
+  border-radius: 8px;
+  width: 22%;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s ease;
+}
+
+.taskdeadline-column h3 {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.taskdeadline-column:hover {
+  transform: scale(1.01);
+  background-color: rgb(255, 174, 0); /* Um tom de laranja mais escuro para o hover */
+}
+
+

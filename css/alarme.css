@@ -1,22 +1,21 @@
 .alarm-container {
     position: absolute;
-    top: 150px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0; /* Alinha a div à direita */
     background-color: rgba(0, 0, 0, 0.8);
     color: #0f0;
     text-align: center;
     font-family: 'Courier New', monospace;
     width: 320px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5);
     display: flex;
     justify-content: center;
     gap: 10px;
     flex-direction: column;
     align-items: center;
+    height: 200px;
+    width: 44.77%;
 }
+
 
 .time-display {
     display: flex;
