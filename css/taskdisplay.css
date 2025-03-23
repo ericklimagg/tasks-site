@@ -1,0 +1,25 @@
+#tasks-display {
+  display: block;  /* Garantir que o display seja block */
+  margin-top: 20px; /* Deixe um espaço entre o conteúdo e a div */
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.task {
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word; /* Quebra palavras longas para evitar o estouro da div */
+}
+
+.task h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.task p {
+  margin: 5px 0;
+}

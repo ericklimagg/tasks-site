@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/newtask.css">
     <link rel="stylesheet" href="css/taskdeadline.css">
+    <link rel="stylesheet" href="css/taskdisplay.css">
 </head>
 
 <body>
@@ -19,17 +20,14 @@
   <header>
     <h1><a href="index.html">Tasks</a></h1>
     <div class="in_line">
-      <img class="img_header" id="img_perfil" src="https://static-00.iconduck.com/assets.00/user-icon-2046x2048-9pwm22pp.png" alt="">
+      <img class="img_header" id="img_perfil" src="https://static-00.iconduck.com/assets.00/user-icon-2046x2048-9pwm22pp.png" alt="Profile">
     </div>
   </header>
 
   <main>
-
     <div class="new-task-container">
       <button id="novaTaskButton">Nova Task</button>
     </div>
-      
-    <div id="tasksContainer"></div>
 
     <div class="alarm-container">
       <div class="time-display">
@@ -48,34 +46,31 @@
       <button id="toggleAlarmButton">Ativar Alarme</button>
     </div>
 
-    <!-- Parte de TaskDeadline -->
-<div class="taskdeadline-container">
-  <!-- Coluna: Próximos 6 dias -->
-  <div class="taskdeadline-column" id="next-days">
-      <h3>Próximos 6 Dias</h3>
-      <ul id="tasks-next-days">
-          <!-- Aqui vão as tarefas filtradas para os próximos 6 dias -->
-      </ul>
+    <!-- Parte de TaskDeadline com botões para filtrar as tarefas -->
+    <div class="taskdeadline-container">
+      <div class="taskdeadline-column" id="Expirates">
+        <h3>Expiradas</h3>
+      </div>
+
+      <div class="taskdeadline-column" id="next-days">
+        <h3>Próximos 6 Dias</h3>
+      </div>
+
+      <div class="taskdeadline-column" id="this-month">
+        <h3>Este Mês</h3>
+      </div>
+
+      <div class="taskdeadline-column" id="next-months">
+        <h3>Próximos Meses</h3>
+      </div>
+    </div>
+
+    <!-- Tarefas serão exibidas aqui -->
+    <div id="tasks-display" style="display: none;">
+      <!-- As tarefas serão injetadas aqui com base nos cliques -->
   </div>
 
-  <!-- Coluna: Este Mês -->
-  <div class="taskdeadline-column" id="this-month">
-      <h3>Este Mês</h3>
-      <ul id="tasks-this-month">
-          <!-- Aqui vão as tarefas filtradas para este mês -->
-      </ul>
-  </div>
-
-  <!-- Coluna: Próximos Meses -->
-  <div class="taskdeadline-column" id="next-months">
-      <h3>Próximos Meses</h3>
-      <ul id="tasks-next-months">
-          <!-- Aqui vão as tarefas filtradas para os próximos meses -->
-      </ul>
-  </div>
-</div>
-
-</main>
+  </main>
 
   <footer>
     <div class="footer-content">
@@ -87,8 +82,10 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="js/alarm.js"></script>
   <script src="js/newtask.js"></script>
   <script src="js/taskstorage.js"></script>
+  <script src="js/taskdisplay.js"></script>
 </body>
 </html>

@@ -1,11 +1,9 @@
 .new-task-container{
-  background-color: rgb(176, 196, 222);
   width: 50%;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
   position: absolute;
   top: 60px;
   left: 0;
@@ -14,19 +12,109 @@
 
 #novaTaskButton {
   background-color: #2eb632; /* Cor de fundo verde */
-  color: white;              /* Cor do texto */
-  border: none;              /* Remover borda */
-  padding: 10px 20px;        /* Espaçamento interno */
-  font-size: 16px;           /* Tamanho da fonte */
-  cursor: pointer;          /* Cursor de mão ao passar o mouse */
-  border-radius: 5px;        /* Bordas arredondadas */
-  transition: background-color 0.3s; /* Transição suave na mudança de cor */
+  color: white;
+  border: none;
+  padding: 15px 30px; /* Aumentando o padding para deixar o botão maior */
+  font-size: 18px; /* Aumentando o tamanho da fonte */
+  cursor: pointer;
+  border-radius: 8px; /* Bordas mais arredondadas */
+  transition: background-color 0.3s, transform 0.3s;
+  align-self: center; /* Centraliza o botão dentro da form-row */
+  margin-top: 20px; /* Mais espaço acima para não ficar grudado */
+  width: 60%; /* Faz o botão ocupar toda a largura disponível */
 }
 
 #novaTaskButton:hover {
   background-color: #248f27;
+  transform: scale(1.05); /* Aumento do botão quando passa o mouse */
+}
+
+#novaTaskButton:active {
+  background-color: #1e7c1a;
+  transform: scale(1);
 }
 
 
+#newTaskForm {
+  padding: 20px;
+}
 
+.new-task-container form {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.new-task-container form label{
+  display: block;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.new-task-container form input,
+.new-task-container form textarea {
+  width: 100%;
+  padding-left: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona um leve sombreamento */
+  font-size: 14px;
+  box-sizing: border-box;
+  height: 36px;  /* Garantir altura consistente */
+  overflow: hidden; /* Evitar que o conteúdo ultrapasse os limites */
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: 'Arial', sans-serif;
+}
+
+.new-task-container form input:focus,
+.new-task-container form textarea:focus {
+  border-color: #4caf50; /* Cor verde para o foco */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Sombra verde ao redor do campo */
+}
+
+
+.form-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.date-field {
+  flex: 1;
+  max-width: 150px;
+}
+
+.submit-button {
+  background-color: #2eb632;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0,3s;
+  width: 100%;
+  padding: 5px;
+  border: none; /* Remove qualquer borda indesejada */
+  box-sizing: border-box; /* Garante que o padding não faça o tamanho do botão aumentar */
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+
+.submit-button:focus {
+  outline: none;
+  font-weight: bold;
+  box-shadow: 0 0 8px #2eb632; /* Sombra suave quando o botão é focado */
+}
+
+.submit-button:hover {
+  transform: scale(1.01); /* Aumenta o botão suavemente */
+  transition: all 0.3s ease; /* Suaviza as transições */
+}
+
+.new-task-container form textarea {
+  height: 40px;  /* Altura para duas linhas de texto */
+  resize: none;  /* Desabilita a opção de redimensionamento */
+}
 
