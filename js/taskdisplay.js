@@ -1,74 +1,91 @@
 // Função para carregar as tarefas do localStorage
 function loadTasks() {
-  // Recupera as tarefas do localStorage ou cria um array vazio se não houver nada
-  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];  // Recupera as tarefas ou cria um array vazio
   console.log('Tarefas carregadas do localStorage:', tasks);
-
-  // Exibe as tarefas na tela
-  displayTasks(tasks);
+  displayTasks(tasks);  // Exibe as tarefas
 }
 
 // Função para exibir as tarefas na página
 function displayTasks(tasks) {
   const tasksDisplay = document.getElementById('tasks-display');
-  tasksDisplay.innerHTML = ''; // Limpa o conteúdo atual da div
+  tasksDisplay.innerHTML = ''; // Limpa a div antes de renderizar
 
-  // Verifica se não há tarefas
   if (tasks.length === 0) {
     tasksDisplay.innerHTML = '<p>Não há tarefas salvas.</p>';
     return;
   }
 
-  // Para cada tarefa no array, cria um elemento para exibir na tela
-  tasks.forEach(task => {
-    console.log('Exibindo tarefa:', task); // Verifica se cada tarefa está sendo processada
-
-    const taskDeadline = new Date(task.deadline); // Converte a string da data da tarefa para um objeto Date
+  tasks.forEach((task, index) => {
+    const taskDeadline = new Date(task.deadline);
     const currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0); // Zera as horas da data atual para comparar apenas com a data (sem a hora)
+    currentDate.setHours(0, 0, 0, 0);  // Zera a hora da data atual para comparação
 
     const taskElement = document.createElement('div');
-    taskElement.classList.add('task'); // Adiciona uma classe para estilo
+    taskElement.classList.add('task');
 
-    // Verifica em qual coluna a tarefa deve ser colocada
-    let taskColumn = '';
-
-    // Verifica se a data da tarefa é anterior a data atual
-    if (taskDeadline < currentDate) {
-      taskColumn = 'Expirates';  // Tarefa já passou da data limite
-    } 
-    // Verifica se a tarefa está dentro dos próximos 6 dias
-    else if (taskDeadline <= addDays(currentDate, 6)) {
-      taskColumn = 'next-days';  // Tarefa dentro dos próximos 6 dias
-    } 
-    // Verifica se a tarefa está dentro do mês atual, incluindo o ano
-    else if (taskDeadline.getFullYear() === currentDate.getFullYear() && taskDeadline.getMonth() === currentDate.getMonth()) {
-      taskColumn = 'this-month';  // Tarefa dentro do mês atual
-    } 
-    // Se a tarefa é de um mês futuro
-    else {
-      taskColumn = 'next-months';  // Tarefa para os próximos meses
+    // Adiciona a classe "completed" se a tarefa estiver concluída
+    if (task.completed) {
+      taskElement.classList.add('completed');
     }
 
-    // Adiciona o conteúdo da tarefa
     taskElement.innerHTML = `
       <h4>${task.name}</h4>
       <p>${task.description}</p>
       <p>Data Limite: ${task.deadline}</p>
     `;
 
-    // Adiciona a tarefa à coluna correta
-    const taskColumnElement = document.getElementById(taskColumn);
-    taskColumnElement.appendChild(taskElement); // Adiciona a tarefa na coluna específica
+    // Criando o botão de exclusão (lixeira)
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete-task');
+    deleteButton.innerHTML = '🗑️';
+    deleteButton.setAttribute('title', 'Excluir tarefa');
+
+    // Evento para excluir a tarefa
+    deleteButton.addEventListener('click', (event) => {
+      event.stopPropagation();  // Impede que o clique na lixeira também dispare o clique na tarefa
+      removeTask(index, tasks);  // Remove a tarefa do localStorage e da interface
+      window.location.reload();  // Recarrega a página para atualizar a interface
+    });
+
+    // Adiciona o botão de lixeira ao elemento da tarefa
+    taskElement.appendChild(deleteButton);
+
+    // Evento de clique para alternar o estado de concluído
+    taskElement.addEventListener('click', function () {
+      task.completed = !task.completed;  // Alterna o estado concluído
+      localStorage.setItem('tasks', JSON.stringify(tasks));  // Salva as mudanças no localStorage
+      taskElement.classList.toggle('completed');  // Altera o estilo visualmente
+    });
+
+    // Determina em qual coluna colocar a tarefa com base na data
+    let taskColumn = '';
+    if (taskDeadline < addDays(currentDate, -1)) {
+      taskColumn = 'expired';
+    } else if (taskDeadline <= addDays(currentDate, 6)) {
+      taskColumn = '6-dias';
+    } else if (taskDeadline <= addDays(currentDate, 30)) {
+      taskColumn = '30-dias';
+    } else {
+      taskColumn = 'mais-30-dias';
+    }
+
+    // Adiciona a tarefa à coluna específica
+    document.getElementById(taskColumn).appendChild(taskElement);
   });
 }
 
-// Função para adicionar dias a uma data (usado para calcular os próximos 6 dias)
+// Função para remover a tarefa do localStorage e da interface
+function removeTask(index, tasks) {
+  tasks.splice(index, 1);  // Remove a tarefa com base no índice
+  localStorage.setItem('tasks', JSON.stringify(tasks));  // Atualiza o localStorage
+}
+
+// Função para adicionar dias a uma data
 function addDays(date, days) {
   const result = new Date(date);
   result.setDate(result.getDate() + days);
   return result;
 }
 
-// Chama a função para carregar as tarefas quando a página carregar
+// Chama a função ao carregar a página
 window.onload = loadTasks;

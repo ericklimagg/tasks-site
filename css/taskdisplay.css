@@ -1,6 +1,6 @@
 #tasks-display {
-  display: block;  /* Garantir que o display seja block */
-  margin-top: 20px; /* Deixe um espaço entre o conteúdo e a div */
+  display: block;
+  margin-top: 20px;
   padding: 10px;
   border: 1px solid #ccc;
   background-color: #f9f9f9;
@@ -12,7 +12,8 @@
   padding: 15px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  word-wrap: break-word; /* Quebra palavras longas para evitar o estouro da div */
+  word-wrap: break-word;
+  transition: all 0.3s ease; /* Suaviza animações */
 }
 
 .task h4 {
@@ -23,3 +24,28 @@
 .task p {
   margin: 5px 0;
 }
+
+.task:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+/* Quando a tarefa for concluída (clicada), fica verde */
+.task.completed {
+  background-color: #2eb632 !important;
+  color: white;
+}
+
+.delete-task {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-task:hover {
+  color: darkred;
+}
+
