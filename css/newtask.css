@@ -11,7 +11,7 @@
 }
 
 #novaTaskButton {
-  background-color: #2eb632; /* Cor de fundo verde */
+  background-color: rgb(63, 148, 63); /* Cor de fundo verde */
   color: white;
   border: none;
   padding: 15px 30px; /* Aumentando o padding para deixar o botão maior */
@@ -89,7 +89,7 @@
 }
 
 .submit-button {
-  background-color: #2eb632;
+  background-color: rgb(63, 148, 63);
   border-radius: 8px;
   transition: background-color 0.3s, transform 0,3s;
   width: 100%;

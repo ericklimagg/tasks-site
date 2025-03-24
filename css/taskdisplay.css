@@ -7,7 +7,7 @@
 }
 
 .task {
-  background-color: #fff;
+  background-color: #ffffffc0;
   margin-bottom: 10px;
   padding: 15px;
   border-radius: 5px;
@@ -32,7 +32,7 @@
 
 /* Quando a tarefa for concluída (clicada), fica verde */
 .task.completed {
-  background-color: #2eb632 !important;
+  background-color: rgb(63, 148, 63) !important;
   color: white;
 }
 
@@ -49,3 +49,6 @@
   color: darkred;
 }
 
+#expired .task {
+  background-color: rgb(255, 79, 79);
+}
