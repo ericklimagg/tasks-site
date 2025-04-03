@@ -7,10 +7,64 @@ footer {
   font-family: 'Rock Salt', cursive;
   text-align: center;
   margin-top: auto;
+  flex-direction: column;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.social-links {
+  display: flex;
+  gap: 40px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.social-pair a {
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.social-pair a:hover {
+  transform: scale(1.1);
+}
+
+.social-pair span {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  color: black;
+}
+
+.linkedin{
+  height: 40px;
+  width: 40px;
+}
+
+.git {
+  height: 40px;
+  width: 60px;
+}
+
