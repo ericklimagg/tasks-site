@@ -1,0 +1,50 @@
+#pauseBox {
+    display: none;
+    position: absolute;
+    top: 61px; 
+    right: 0;
+    width: 44.77%;
+    height: 200px; 
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 0;
+    z-index: 1000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #pauseBox p {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  #pauseBox #pauseTimer {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
+    color: #0f0;
+  }
+  
+  #pauseBox #resumeButton {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+  }
+  
+  #pauseBox #resumeButton:hover {
+    background-color: #e64a19;
+  }
+  #pauseBox {
+    display: none !important; 
+    visibility: hidden;
+    opacity: 0;
+  }
+  
