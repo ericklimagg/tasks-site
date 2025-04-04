@@ -2,17 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temporizador</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/alarme.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/newtask.css">
-    <link rel="stylesheet" href="css/taskdeadline.css">
-    <link rel="stylesheet" href="css/taskdisplay.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temporizador</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/alarme.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/newtask.css" />
+  <link rel="stylesheet" href="css/taskdeadline.css" />
+  <link rel="stylesheet" href="css/taskdisplay.css" />
+  <link rel="stylesheet" href="css/pausa.css" /> 
 </head>
 
 <body>
@@ -20,7 +21,8 @@
   <header>
     <h1><a href="index.html">Tasks</a></h1>
     <div class="in_line">
-      <img class="img_header" id="img_perfil" src="https://static-00.iconduck.com/assets.00/user-icon-2046x2048-9pwm22pp.png" alt="Profile">
+      <img class="img_header" id="img_perfil"
+        src="https://static-00.iconduck.com/assets.00/user-icon-2046x2048-9pwm22pp.png" alt="Profile" />
     </div>
   </header>
 
@@ -31,52 +33,54 @@
 
     <div class="alarm-container">
       <div class="time-display">
-          <div class="time-unit">
-              <div class="arrow arrow-up">▲</div>
-              <span id="minutes">25</span>
-              <div class="arrow arrow-down">▼</div>
-          </div>
-          <span>:</span>
-          <div class="time-unit">
-              <div class="arrow arrow-up">▲</div>
-              <span id="seconds">00</span>
-              <div class="arrow arrow-down">▼</div>
-          </div>
+        <div class="time-unit">
+          <div class="arrow arrow-up">▲</div>
+          <span id="minutes">25</span>
+          <div class="arrow arrow-down">▼</div>
+        </div>
+        <span>:</span>
+        <div class="time-unit">
+          <div class="arrow arrow-up">▲</div>
+          <span id="seconds">00</span>
+          <div class="arrow arrow-down">▼</div>
+        </div>
       </div>
-      <button id="toggleAlarmButton">Ativar Alarme</button>
+
+      <div style="display: flex; gap: 10px; margin-top: 10px;">
+        <button id="toggleAlarmButton">Ativar Alarme</button>
+        <button id="pauseButton">Pausar</button>
+      </div>
     </div>
 
-    <!-- Parte de TaskDeadline com botões para filtrar as tarefas -->
+ 
+    <div id="pauseBox">
+      <p>Pausa</p>
+      <div id="pauseTimer">05:00</div>
+      <button id="resumeButton">Voltar ao Cronômetro</button>
+    </div>
+
     <div class="taskdeadline-container">
       <div class="taskdeadline-column" id="expired">
         <h3>Expiradas</h3>
       </div>
-
       <div class="taskdeadline-column" id="6-dias">
         <h3>Próximos 6 Dias</h3>
       </div>
-
       <div class="taskdeadline-column" id="30-dias">
         <h3>Próximos 30 dias</h3>
       </div>
-
       <div class="taskdeadline-column" id="mais-30-dias">
         <h3>Mais de 30 dias</h3>
       </div>
     </div>
 
-    <!-- Tarefas serão exibidas aqui -->
-    <div id="tasks-display" style="display: none;">
-      <!-- As tarefas serão injetadas aqui com base nos cliques -->
-  </div>
-
+    <div id="tasks-display" style="display: none;"></div>
   </main>
 
   <footer>
     <div class="footer-content">
       <div class="social-links">
-  
-        <!-- Erick -->
+
         <div class="social-pair">
           <div class="icon-row">
             <a href="https://www.linkedin.com/in/erick-lima-0ab586283/" target="_blank">
@@ -88,8 +92,7 @@
           </div>
           <span>Erick</span>
         </div>
-  
-        <!-- Felipe -->
+
         <div class="social-pair">
           <div class="icon-row">
             <a href="https://linkedin.com/in/parceiro" target="_blank">
@@ -100,18 +103,17 @@
             </a>
           </div>
           <span>Felipe</span>
-
         </div>
-  
+
       </div>
     </div>
-  </footer>  
+  </footer>
 
-
-  <!-- Scripts -->
   <script src="js/alarm.js"></script>
   <script src="js/newtask.js"></script>
   <script src="js/taskstorage.js"></script>
   <script src="js/taskdisplay.js"></script>
+  <script src="js/pausa.js"></script>
 </body>
+
 </html>
