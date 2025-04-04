@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let alarmInterval;
     let isRunning = false;
+    let isPaused = false;
 
     const minutesDisplay = document.getElementById("minutes");
     const secondsDisplay = document.getElementById("seconds");
@@ -49,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let seconds = parseInt(secondsDisplay.textContent);
 
         alarmInterval = setInterval(() => {
+            if (isPaused) return; 
+
             if (seconds > 0) {
                 seconds--;
             } else if (minutes > 0) {
@@ -65,5 +68,13 @@ document.addEventListener("DOMContentLoaded", function () {
             minutesDisplay.textContent = minutes.toString().padStart(2, "0");
             secondsDisplay.textContent = seconds.toString().padStart(2, "0");
         }, 1000);
+    });
+
+    document.addEventListener("pauseMainTimer", function () {
+        isPaused = true;
+    });
+
+    document.addEventListener("resumeMainTimer", function () {
+        isPaused = false;
     });
 });
