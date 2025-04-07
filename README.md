@@ -1,7 +1,11 @@
-# Projeto-Front-End-2025
 # Tasks - Sistema de Gerenciamento de Tarefas com Temporizador Pomodoro
 
 Um aplicativo web para gerenciamento de tarefas com temporizador integrado, desenvolvido para melhorar a produtividade e organização de atividades diárias.
+
+## Acesso
+
+Você pode acessar o aplicativo diretamente através do GitHub Pages:
+[Tasks - Sistema de Gerenciamento de Tarefas](https://ericklimagg.github.io/tasks-site/)
 
 ## Visão Geral
 
@@ -64,24 +68,19 @@ tasks/
 
 ## Como Usar
 
-1. Clone este repositório para sua máquina local:
-   ```
-   git clone https://github.com/seu-usuario/tasks.git
-   ```
+1. Acesse diretamente pelo GitHub Pages: [Tasks - Sistema de Gerenciamento de Tarefas](https://ericklimagg.github.io/tasks-site/)
 
-2. Abra o arquivo `index.html` em seu navegador preferido.
-
-3. Para criar uma nova tarefa:
+2. Para criar uma nova tarefa:
    - Clique no botão "Nova Task"
    - Preencha o nome, descrição e data limite
    - Clique em "Salvar Task"
 
-4. Para usar o temporizador:
+3. Para usar o temporizador:
    - Ajuste o tempo desejado usando as setas
    - Clique em "Ativar Alarme" para iniciar
    - Use "Pausar" para alternar para o modo de pausa de 5 minutos
 
-5. Para gerenciar tarefas:
+4. Para gerenciar tarefas:
    - Clique em uma tarefa para marcá-la como concluída
    - Clique no ícone de lixeira para excluir uma tarefa
 
@@ -91,10 +90,12 @@ tasks/
   - [LinkedIn](https://www.linkedin.com/in/erick-lima-0ab586283/)
   - [GitHub](https://github.com/ericklimagg)
 
-- **Felipe**
+- **Felipe Fernandes**
   - [LinkedIn](https://linkedin.com/in/parceiro)
   - [GitHub](https://github.com/lipino2005)
 
 ## Considerações Finais
 
 Este projeto foi desenvolvido como parte de um trabalho acadêmico para demonstrar conhecimentos em desenvolvimento web front-end, utilizando HTML, CSS e JavaScript. O sistema utiliza armazenamento local (localStorage) para persistência de dados, sem necessidade de banco de dados ou backend.
+
+Todos os dados são armazenados localmente no navegador do usuário, permitindo que as tarefas persistam entre sessões no mesmo dispositivo.
