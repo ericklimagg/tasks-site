@@ -1,40 +1,35 @@
 .taskdeadline-container {
-  background-color: rgb(252, 195, 72); /* Cor de fundo mais suave para o container */
+  background-color: rgb(252, 195, 72); /* Fundo suave para destacar a área de prazos */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Espaça igualmente as colunas */
   padding: 5px;
-  margin-top: 240px;
+  margin-top: 240px; /* Distância do topo (encaixa abaixo do cronômetro) */
   position: relative;
   z-index: 1px;
   text-align: center;
-  font-family: 'Courier New', monospace;
+  font-family: 'Courier New', monospace; /* Deixando com estilo mais "terminal" */
 }
 
 .taskdeadline-column {
-  background-color: rgb(255, 174, 0); /* Um laranja bem suave, em tons claros */
+  background-color: rgb(255, 174, 0); /* Tom de laranja para manter a identidade visual */
   padding: 12px;
-  border-radius: 8px;
-  width: 22%;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.3s, background-color 0.3s ease;
-  cursor: auto;
+  border-radius: 8px; /* Cantos arredondados */
+  width: 22%; /* Distribui as colunas de forma proporcional */
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1); /* Sombra leve pra destacar */
+  cursor: auto; /* Não é clicável por padrão */
+  transition: transform 0.3s, background-color 0.3s ease; /* Animações suaves no hover */
   margin-bottom: 5px;
   margin-top: 5px;
 }
 
 .taskdeadline-column h3 {
-  font-size: 14px;
+  font-size: 17px;
   color: #333;
   font-weight: bold;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  font-size: 17px;
   margin-bottom: 20px;
-  
+  text-transform: uppercase; /* Deixa os títulos em capslock pra dar destaque */
 }
 
 .taskdeadline-column:hover {
-  background-color: rgb(255, 174, 0); /* Um tom de laranja mais escuro para o hover */
+  background-color: rgb(255, 174, 0); /* Mantém a cor no hover, só pra não quebrar a transição */
 }
-

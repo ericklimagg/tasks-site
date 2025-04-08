@@ -1,11 +1,11 @@
 .alarm-container {
     position: absolute;
-    right: 0; /* Alinha a div à direita */
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #0f0;
+    right: 0; /* Gruda o container no canto direito da tela */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+    color: #0f0; /* Verde estilo terminal */
     text-align: center;
-    font-family: 'Courier New', monospace;
-    width: 320px;
+    font-family: 'Courier New', monospace; /* Letra com vibe retrô/tech */
+    width: 44.77%;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -13,15 +13,13 @@
     flex-direction: column;
     align-items: center;
     height: 200px;
-    width: 44.77%;
 }
-
 
 .time-display {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px; 
+    gap: 5px; /* Espaço entre as unidades de tempo */
 }
 
 .time-unit {
@@ -31,7 +29,7 @@
     font-size: 50px;
     font-weight: bold;
     cursor: pointer;
-    user-select: none;
+    user-select: none; /* Impede que o valor seja selecionado ao clicar */
     width: 70px;
 }
 
@@ -42,11 +40,11 @@
 .arrow {
     font-size: 30px;
     cursor: pointer;
-    color: #ff5722;
+    color: #ff5722; /* Laranja vibrante */
 }
 
 .arrow:hover {
-    color: #e64a19;
+    color: #e64a19; /* Laranja um pouco mais escuro no hover */
 }
 
 .alarm-container button {
@@ -59,22 +57,7 @@
     cursor: pointer;
     width: 100%;
     font-size: 16px;
-}
-
-.alarm-container button:hover {
-    background-color: #e64a19;
-}
-.alarm-container button {
-    margin-top: 20px;
-    background-color: #ff5722;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px; /* Distância entre os botões */
 }
 
 .alarm-container button:hover {
@@ -82,12 +65,13 @@
 }
 
 #stopAlarmButton {
-    background-color: #f44336; 
+    background-color: #f44336; /* Vermelho padrão para o botão de parar */
 }
 
 #stopAlarmButton:hover {
-    background-color: #d32f2f; 
+    background-color: #d32f2f; /* Vermelho mais escuro no hover */
 }
+
 #toggleAlarmButton {
     margin-top: 20px;
     background-color: #ff5722;
@@ -101,7 +85,7 @@
 }
 
 #toggleAlarmButton.running {
-    background-color: #f44336; /* Vermelho quando está rodando */
+    background-color: #f44336; /* Muda a cor quando o alarme está ativo */
 }
 
 #toggleAlarmButton:hover {
@@ -111,6 +95,3 @@
 #toggleAlarmButton.running:hover {
     background-color: #d32f2f;
 }
-
-
-

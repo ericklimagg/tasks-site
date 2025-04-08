@@ -1,4 +1,4 @@
-.new-task-container{
+.new-task-container {
   width: 50%;
   height: 200px;
   display: flex;
@@ -7,95 +7,100 @@
   position: absolute;
   top: 60px;
   left: 0;
-  padding: 20px;
+  padding: 20px; /* Dá espaço interno para o conteúdo do formulário */
 }
 
+/* Botão para abrir o formulário de nova tarefa */
 #novaTaskButton {
-  background-color: rgb(63, 148, 63); /* Cor de fundo verde */
+  background-color: rgb(63, 148, 63); /* Verde de destaque */
   color: white;
   border: none;
-  padding: 15px 30px; /* Aumentando o padding para deixar o botão maior */
-  font-size: 18px; /* Aumentando o tamanho da fonte */
+  padding: 15px 30px; /* Deixa o botão grande e confortável de clicar */
+  font-size: 18px; /* Tamanho de fonte maior pro botão chamar mais atenção */
   cursor: pointer;
-  border-radius: 8px; /* Bordas mais arredondadas */
-  transition: background-color 0.3s, transform 0.3s;
-  align-self: center; /* Centraliza o botão dentro da form-row */
-  margin-top: 20px; /* Mais espaço acima para não ficar grudado */
-  width: 60%; /* Faz o botão ocupar toda a largura disponível */
+  border-radius: 8px; /* Cantos arredondados pro visual mais moderno */
+  transition: background-color 0.3s, transform 0.3s; /* Animações suaves */
+  align-self: center; /* Centraliza o botão dentro do container flex */
+  margin-top: 20px; /* Espaço acima do botão */
+  width: 60%; /* Ocupa boa parte da largura disponível */
 }
 
 #novaTaskButton:hover {
-  background-color: #248f27;
-  transform: scale(1.05); /* Aumento do botão quando passa o mouse */
+  background-color: #248f27; /* Tom mais escuro de verde no hover */
+  transform: scale(1.05); /* Animação leve quando passa o mouse */
 }
 
 #novaTaskButton:active {
-  background-color: #1e7c1a;
-  transform: scale(1);
+  background-color: #1e7c1a; /* Verde ainda mais escuro no clique */
+  transform: scale(1); /* Remove o efeito de escala durante o clique */
 }
 
-
+/* Formulário de nova tarefa */
 #newTaskForm {
-  padding: 20px;
+  padding: 20px; /* Espaço interno ao redor do formulário */
 }
 
+/* Configura o layout interno do formulário */
 .new-task-container form {
   width: 100%;
   height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* Espaça os elementos igualmente */
 }
 
-.new-task-container form label{
+/* Estilização dos rótulos (labels) dos campos */
+.new-task-container form label {
   display: block;
   margin-top: 2px;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #333;
+  color: #333; /* Tom escuro pra boa leitura */
 }
 
+/* Campos de texto e área de texto */
 .new-task-container form input,
 .new-task-container form textarea {
   width: 100%;
   padding-left: 8px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona um leve sombreamento */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve pra destacar */
   font-size: 14px;
   box-sizing: border-box;
-  height: 36px;  /* Garantir altura consistente */
-  overflow: hidden; /* Evitar que o conteúdo ultrapasse os limites */
-  transition: border-color 0.3s, box-shadow 0.3s;
+  height: 36px; /* Altura padrão pros campos */
+  overflow: hidden; /* Evita scroll dentro do input */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Animação ao focar */
   font-family: 'Arial', sans-serif;
 }
 
 .new-task-container form input:focus,
 .new-task-container form textarea:focus {
-  border-color: #4caf50; /* Cor verde para o foco */
-  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Sombra verde ao redor do campo */
+  border-color: #4caf50; /* Borda verde quando o campo está em foco */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Brilho suave em volta */
 }
 
-
+/* Agrupamento dos campos em linha (ex: data + botão) */
 .form-row {
   display: flex;
   align-items: flex-end;
-  gap: 10px;
+  gap: 10px; /* Espaço entre os campos da linha */
 }
 
 .date-field {
   flex: 1;
-  max-width: 150px;
+  max-width: 150px; /* Limita o tamanho do campo de data */
 }
 
+/* Botão de envio do formulário */
 .submit-button {
-  background-color: rgb(63, 148, 63);
+  background-color: rgb(63, 148, 63); /* Mesmo tom de verde usado no botão principal */
   border-radius: 8px;
-  transition: background-color 0.3s, transform 0,3s;
+  transition: background-color 0.3s, transform 0.3s; /* Corrigido: vírgula estava errada */
   width: 100%;
   padding: 5px;
-  border: none; /* Remove qualquer borda indesejada */
-  box-sizing: border-box; /* Garante que o padding não faça o tamanho do botão aumentar */
+  border: none;
+  box-sizing: border-box;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
@@ -105,16 +110,16 @@
 .submit-button:focus {
   outline: none;
   font-weight: bold;
-  box-shadow: 0 0 8px #2eb632; /* Sombra suave quando o botão é focado */
+  box-shadow: 0 0 8px #2eb632; /* Brilho verde quando focado */
 }
 
 .submit-button:hover {
-  transform: scale(1.01); /* Aumenta o botão suavemente */
-  transition: all 0.3s ease; /* Suaviza as transições */
+  transform: scale(1.01); /* Efeito sutil ao passar o mouse */
+  transition: all 0.3s ease;
 }
 
+/* Área de texto com altura fixa */
 .new-task-container form textarea {
-  height: 40px;  /* Altura para duas linhas de texto */
-  resize: none;  /* Desabilita a opção de redimensionamento */
+  height: 40px; /* Duas linhas de altura */
+  resize: none; /* Impede o redimensionamento manual do campo */
 }
-

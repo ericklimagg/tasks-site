@@ -1,17 +1,16 @@
 html, body {
-  margin: 0;
-  height: 100%;
-  font-family: 'Arial', sans-serif;
+  margin: 0; /* Remove margens padrão */
+  height: 100%; /* Garante que o body ocupe toda a altura da tela */
+  font-family: 'Arial', sans-serif; /* Fonte base do layout */
 }
 
 body {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 30%;
-  background-color: rgb(255, 195, 64);
+  background-repeat: no-repeat; /* Evita que a imagem de fundo repita */
+  background-position: center; /* Centraliza a imagem de fundo */
+  background-size: 30%; /* Reduz a imagem pra não ocupar tudo */
+  background-color: rgb(255, 195, 64); /* Cor de fundo principal (tom amarelo) */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;  /* A altura do body será 100% da altura da janela */
-
+  justify-content: space-between; /* Distribui elementos ao longo da altura */
+  height: 100vh; /* Garante 100% da altura da viewport */
 }

@@ -1,25 +1,25 @@
 header {
-  background-color: rgb(255, 174, 0);
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  font-family: 'Rock Salt', cursive;
-  height: 60px;
-  justify-content: space-between;
+  background-color: rgb(255, 174, 0); /* Cor de fundo amarela vibrante pro cabeçalho */
+  display: flex; /* Organiza os elementos horizontalmente */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+  padding: 0 10px; /* Espaço nas laterais internas */
+  font-family: 'Rock Salt', cursive; /* Fonte com estilo manuscrito */
+  height: 60px; /* Altura fixa do cabeçalho */
+  justify-content: space-between; /* Espaça os elementos para os cantos (logo à esquerda, resto à direita) */
 }
 
 .img_header {
-  height: 40px;
+  height: 40px; /* Define a altura da imagem do logo */
 }
 
 .in_line {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: flex; /* Exibe os elementos em linha */
+  align-items: center; /* Alinha verticalmente no centro */
+  gap: 10px; /* Espaçamento entre os elementos dentro da linha */
 }
 
 h1 a {
-  font-size: 35px;
-  text-decoration: none;
-  color: inherit;
+  font-size: 35px; /* Tamanho grande para o nome/logo do site */
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: inherit; /* Mantém a cor do texto herdada do pai */
 }

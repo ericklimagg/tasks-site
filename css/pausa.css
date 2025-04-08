@@ -1,21 +1,20 @@
 #pauseBox {
-  display: none;
+  display: none; /* Começa oculto */
   position: absolute;
-  top: 60px; 
+  top: 60px; /* Distância do topo da tela */
   right: 0;
-  width: 44.77%;
+  width: 44.77%; /* Largura proporcional, pra encaixar bem */
   height: 200px; 
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.9); /* Fundo escuro semi-transparente */
   color: white;
   padding: 20px;
   border-radius: 0;
-  z-index: 1000;
+  z-index: 1000; /* Garante que fique por cima de outros elementos */
   text-align: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
 
 #pauseBox p {
   font-size: 24px;
@@ -23,16 +22,16 @@
 }
 
 #pauseBox #pauseTimer {
-  font-size: 40px;
+  font-size: 40px; /* Destaque pro tempo */
   margin-bottom: 10px;
-  font-family: 'Courier New', monospace;
-  color: #0f0;
+  font-family: 'Courier New', monospace; /* Fonte tipo relógio digital */
+  color: #0f0; /* Verde neon */
 }
 
 #pauseBox #resumeButton {
   padding: 8px 12px;
   font-size: 14px;
-  background-color: #ff5722;
+  background-color: #ff5722; /* Laranja escuro */
   color: white;
   border: none;
   border-radius: 0;
@@ -40,5 +39,5 @@
 }
 
 #pauseBox #resumeButton:hover {
-  background-color: #e64a19;
+  background-color: #e64a19; /* Cor mais escura no hover */
 }

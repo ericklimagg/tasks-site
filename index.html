@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Configurações básicas da página -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Temporizador</title>
+
+  <!-- Importação dos arquivos de estilo (CSS) separados por funcionalidade -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/alarme.css" />
   <link rel="stylesheet" href="css/footer.css" />
@@ -16,6 +19,7 @@
   <link rel="stylesheet" href="css/metodo.css" />
 </head>
 <body>
+  <!-- Cabeçalho da página com título e botão de menu -->
   <header>
     <h1><a href="index.html">Tasks</a></h1>
     <div class="in_line">
@@ -25,18 +29,22 @@
   </header>
 
   <main>
+    <!-- Botão para criar uma nova task -->
     <div class="new-task-container">
       <button id="novaTaskButton">Nova Task</button>
     </div>
 
+    <!-- Temporizador estilo Pomodoro com controles de tempo -->
     <div class="alarm-container">
       <div class="time-display">
+        <!-- Controles de minutos -->
         <div class="time-unit">
           <div class="arrow arrow-up">▲</div>
           <span id="minutes">25</span>
           <div class="arrow arrow-down">▼</div>
         </div>
         <span>:</span>
+        <!-- Controles de segundos -->
         <div class="time-unit">
           <div class="arrow arrow-up">▲</div>
           <span id="seconds">00</span>
@@ -44,18 +52,21 @@
         </div>
       </div>
 
+      <!-- Botões de ativar alarme e pausar -->
       <div style="display: flex; gap: 10px; margin-top: 10px;">
         <button id="toggleAlarmButton">Ativar Alarme</button>
         <button id="pauseButton">Pausar</button>
       </div>
     </div>
 
+    <!-- Seção exibida durante a pausa -->
     <div id="pauseBox">
       <p>Pausa</p>
       <div id="pauseTimer">05:00</div>
       <button id="resumeButton">Voltar ao Cronômetro</button>
     </div>
 
+    <!-- Colunas que separam as tasks por prazo -->
     <div class="taskdeadline-container">
       <div class="taskdeadline-column" id="expired">
         <h3>Expiradas</h3>
@@ -71,8 +82,10 @@
       </div>
     </div>
 
+    <!-- Container onde as tasks são exibidas dinamicamente -->
     <div id="tasks-display" style="display: none;"></div>
 
+    <!-- Resumo explicando como funciona o método Pomodoro -->
     <div class="pomodoro-resumo">
       <h2>Método Pomodoro 🍅</h2>
       <p>
@@ -115,13 +128,13 @@
         Com o tempo, o Pomodoro se torna mais do que uma técnica: vira um estilo de trabalho focado, eficiente e saudável. Experimente e adapte os ciclos conforme sua rotina!
       </p>
     </div>
-    
-    
   </main>
 
+  <!-- Rodapé com links para LinkedIn e GitHub dos desenvolvedores -->
   <footer>
     <div class="footer-content">
       <div class="social-links">
+        <!-- Contato do Erick -->
         <div class="social-pair">
           <div class="icon-row">
             <a href="https://www.linkedin.com/in/erick-lima-0ab586283/" target="_blank">
@@ -134,6 +147,7 @@
           <span>Erick</span>
         </div>
 
+        <!-- Contato do Felipe -->
         <div class="social-pair">
           <div class="icon-row">
             <a href="https://www.linkedin.com/in/felipe-fernandes-eduardo-8865b4270/" target="_blank">
@@ -149,6 +163,7 @@
     </div>
   </footer>
 
+  <!-- Scripts responsáveis pela lógica do temporizador, tarefas e pausa -->
   <script src="js/alarm.js"></script>
   <script src="js/newtask.js"></script>
   <script src="js/taskstorage.js"></script>

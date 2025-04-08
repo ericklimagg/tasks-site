@@ -1,12 +1,12 @@
 footer {
-  background-color: rgb(255, 174, 0);
+  background-color: rgb(255, 174, 0); /* Mesma cor vibrante usada no header */
   display: flex; 
   justify-content: center; 
   align-items: center; 
   padding: 15px 10px;
-  font-family: 'Rock Salt', cursive;
+  font-family: 'Rock Salt', cursive; /* Mantém a identidade visual */
   text-align: center;
-  margin-top: auto;
+  margin-top: auto; /* Garante que o footer fique sempre no final da página */
   flex-direction: column;
 }
 
@@ -23,9 +23,9 @@ footer {
 
 .social-links {
   display: flex;
-  gap: 40px;
+  gap: 40px; /* Espaço entre os pares de redes sociais */
   margin-top: 10px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Permite quebrar linha se a tela for menor */
   justify-content: center;
 }
 
@@ -38,17 +38,17 @@ footer {
 
 .icon-row {
   display: flex;
-  gap: 10px;
+  gap: 10px; /* Espaço entre os ícones */
   align-items: center;
 }
 
 .social-pair a {
   text-decoration: none;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease; /* Efeito suave ao passar o mouse */
 }
 
 .social-pair a:hover {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Pequeno zoom no hover */
 }
 
 .social-pair span {
@@ -58,6 +58,7 @@ footer {
   color: black;
 }
 
+/* Tamanho fixo dos ícones para manter padrão visual */
 .linkedin{
   height: 40px;
   width: 40px;
@@ -67,4 +68,3 @@ footer {
   height: 40px;
   width: 60px;
 }
-

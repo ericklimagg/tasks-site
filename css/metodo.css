@@ -1,36 +1,35 @@
 .pomodoro-resumo {
-  background-color: orange;
-  border-radius: 16px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  padding: 24px;
-  margin: 40px auto;
-  width: 90%;
-  font-family: 'Segoe UI', sans-serif;
+  background-color: orange; /* Cor de fundo vibrante pra chamar atenção pro resumo */
+  border-radius: 16px; /* Cantos bem arredondados pro estilo suave */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); /* Sombra leve pra dar profundidade */
+  padding: 24px; /* Espaço interno confortável */
+  margin: 40px auto; /* Distância do topo e centralização horizontal */
+  width: 90%; /* Largura que ocupa boa parte da tela, mas ainda com respiro */
+  font-family: 'Segoe UI', sans-serif; /* Fonte mais moderna e limpa */
 }
 
 .pomodoro-resumo h2 {
-  color: #e74c3c;
-  font-size: 1.8rem;
-  margin-bottom: 16px;
-
+  color: #e74c3c; /* Vermelho forte pra destacar o título */
+  font-size: 1.8rem; /* Tamanho de título de destaque */
+  margin-bottom: 16px; /* Espaço abaixo do título */
 }
 
 .pomodoro-resumo p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 12px;
+  font-size: 1rem; /* Tamanho de leitura confortável */
+  line-height: 1.6; /* Espaçamento vertical entre linhas mais arejado */
+  margin-bottom: 12px; /* Separação entre parágrafos */
 }
 
 .pomodoro-resumo ul {
-  padding-left: 20px;
-  margin-bottom: 16px;
+  padding-left: 20px; /* Espaço à esquerda pra alinhar os itens da lista */
+  margin-bottom: 16px; /* Espaço entre a lista e o próximo elemento */
 }
 
 .pomodoro-resumo li {
-  margin-bottom: 8px;
+  margin-bottom: 8px; /* Espaço entre os itens da lista */
 }
 
 .pomodoro-resumo .destaque {
-  font-weight: bold;
-  color: #e74c3c;
+  font-weight: bold; /* Deixa o texto em negrito pra chamar atenção */
+  color: #e74c3c; /* Mesma cor do título, mantendo o padrão de destaque */
 }
