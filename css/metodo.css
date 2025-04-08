@@ -1,0 +1,36 @@
+.pomodoro-resumo {
+  background-color: orange;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin: 40px auto;
+  width: 90%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.pomodoro-resumo h2 {
+  color: #e74c3c;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+
+}
+
+.pomodoro-resumo p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.pomodoro-resumo ul {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.pomodoro-resumo li {
+  margin-bottom: 8px;
+}
+
+.pomodoro-resumo .destaque {
+  font-weight: bold;
+  color: #e74c3c;
+}
