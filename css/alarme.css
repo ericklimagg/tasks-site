@@ -1,19 +1,15 @@
 .alarm-container {
-    position: absolute;
-    right: 0; /* Gruda o container no canto direito da tela */
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
-    color: #0f0; /* Verde estilo terminal */
     text-align: center;
-    font-family: 'Courier New', monospace; /* Letra com vibe retrô/tech */
-    width: 44.77%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #0f0;
+    font-family: 'Courier New', monospace;
     padding: 20px;
     display: flex;
     justify-content: center;
     gap: 10px;
     flex-direction: column;
     align-items: center;
-    height: 200px;
-}
+  }
 
 .time-display {
     display: flex;

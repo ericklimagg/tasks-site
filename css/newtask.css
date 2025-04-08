@@ -1,13 +1,8 @@
 .new-task-container {
-  width: 50%;
-  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  padding: 20px; /* Dá espaço interno para o conteúdo do formulário */
+  padding: 20px;
 }
 
 /* Botão para abrir o formulário de nova tarefa */
@@ -123,3 +118,4 @@
   height: 40px; /* Duas linhas de altura */
   resize: none; /* Impede o redimensionamento manual do campo */
 }
+

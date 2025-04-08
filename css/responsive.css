@@ -1,0 +1,157 @@
+/* Arquivo: css/responsive.css */
+
+/* Layout padrão (desktop) */
+.new-task-container, .alarm-container {
+  position: absolute;
+  top: 60px;
+  height: 200px;
+}
+
+.new-task-container {
+  width: 50%;
+  left: 0;
+}
+
+.alarm-container {
+  width: 44.77%;
+  right: 0;
+}
+
+.taskdeadline-container {
+  margin-top: 240px;
+}
+
+/* Media query para telas médias */
+@media screen and (max-width: 900px) {
+  .taskdeadline-container {
+    flex-wrap: wrap;
+  }
+  
+  .taskdeadline-column {
+    width: 45%;
+    margin-bottom: 15px;
+  }
+}
+
+/* Media query para telas pequenas (abaixo de 768px) */
+@media screen and (max-width: 768px) {
+  /* Reorganiza o layout vertical */
+  .new-task-container, .alarm-container {
+    position: relative;
+    top: 0;
+    width: 90%;
+    margin: 10px auto;
+    height: auto;
+    min-height: 200px;
+    padding: 15px 0;
+  }
+  
+  /* Garante que o container de nova tarefa fique no topo */
+  .new-task-container {
+    left: auto;
+    right: auto;
+  }
+  
+  /* Move o cronômetro para baixo da seção de nova tarefa */
+  .alarm-container {
+    right: auto;
+  }
+  
+  /* Ajusta a área de prazos */
+  .taskdeadline-container {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .taskdeadline-column {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+  
+  /* Ajusta a box de pausa para ficar abaixo do cronômetro */
+  #pauseBox {
+    position: relative;
+    top: 0;
+    right: auto;
+    width: 90%;
+    margin: 10px auto;
+  }
+  
+  /* Botão de nova tarefa em tela cheia */
+  #novaTaskButton {
+    width: 80%;
+  }
+  
+  /* Ajustes no formulário de nova tarefa */
+  .new-task-container form {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  /* Ajustes no resumo do método Pomodoro */
+  .pomodoro-resumo {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+/* Media query para telas muito pequenas (abaixo de 480px) */
+@media screen and (max-width: 480px) {
+  .time-unit {
+    font-size: 40px;
+    width: 60px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .date-field {
+    max-width: none;
+  }
+  
+  .social-links {
+    gap: 20px;
+  }
+}
+
+
+
+/* Ajustes no newtask.css */
+.new-task-container {
+  /* Remover position: absolute, width, top e left daqui */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Ajustes no pausa.css */
+#pauseBox {
+  display: none;
+  /* Remover position: absolute, right, top, width daqui */
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 20px;
+  border-radius: 0;
+  z-index: 1000;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ajustes no taskdeadline.css */
+.taskdeadline-container {
+  background-color: rgb(252, 195, 72);
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  /* Remover margin-top daqui, será controlado pelo responsive.css */
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+}
