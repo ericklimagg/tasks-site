@@ -1,4 +1,3 @@
-/* Estilo principal da área onde as tarefas são exibidas */
 #tasks-display {
   display: block;
   margin-top: 20px;
@@ -7,41 +6,35 @@
   background-color: #f9f9f9;
 }
 
-/* Estilo padrão de cada tarefa */
 .task {
-  background-color: #ffffffc0; /* Branco com transparência */
+  background-color: #ffffffc0; 
   margin-bottom: 10px;
   padding: 15px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
   word-wrap: break-word;
-  transition: all 0.3s ease; /* Suaviza animações ao interagir */
+  transition: all 0.3s ease; 
 }
 
-/* Título da tarefa */
 .task h4 {
   margin: 0;
   font-size: 18px;
 }
 
-/* Texto adicional da tarefa */
 .task p {
   margin: 5px 0;
 }
 
-/* Efeito ao passar o mouse sobre a tarefa */
 .task:hover {
-  transform: scale(1.02); /* Aumenta levemente o tamanho */
+  transform: scale(1.02); 
   cursor: pointer;
 }
 
-/* Estilo para tarefas concluídas */
 .task.completed {
-  background-color: rgb(63, 148, 63) !important; /* Verde escuro */
+  background-color: rgb(63, 148, 63) !important; 
   color: white;
 }
 
-/* Botão de deletar a tarefa */
 .delete-task {
   background: none;
   border: none;
@@ -51,12 +44,10 @@
   margin-left: 10px;
 }
 
-/* Efeito ao passar o mouse no botão de deletar */
 .delete-task:hover {
   color: darkred;
 }
 
-/* Estilo específico para tarefas expiradas (atrasadas) */
 #expired .task {
-  background-color: rgb(255, 79, 79); /* Vermelho forte */
+  background-color: rgb(255, 79, 79); 
 }

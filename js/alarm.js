@@ -1,96 +1,171 @@
-// Aguarda o carregamento do DOM para iniciar o script
 document.addEventListener("DOMContentLoaded", function () {
-    // Variáveis de controle do cronômetro
-    let alarmInterval;
-    let isRunning = false; // Indica se o alarme está ativo
-    let isPaused = false;  // Indica se está em pausa (modo Pomodoro)
+    let timerInterval;
+    let isRunning = false;
+    let isPaused = false;
+    let currentSeconds = 1500;
+    let currentMode = "pomodoro";
+    let completedPomodoros = 0;
 
-    // Seleção dos elementos de exibição do tempo e botão de controle
-    const minutesDisplay = document.getElementById("minutes");
-    const secondsDisplay = document.getElementById("seconds");
-    const toggleAlarmButton = document.getElementById("toggleAlarmButton");
+    // Áudio de alarme configurado com caminho relativo
+    const alarmSound = new Audio("js/alarme.mp3"); // certifique-se de que esse caminho está certo
 
-    // Função para alterar o tempo (minutos ou segundos)
-    function changeTime(unit, increment, max) {
-        let value = parseInt(unit.textContent);
-        // Garante que o valor fique entre 0 e (max - 1)
-        value = (value + increment + max) % max;
-        unit.textContent = value.toString().padStart(2, "0");
+    // Função que executa o som de alarme
+    function playAlarm() {
+        alarmSound.currentTime = 0; // Reinicia o áudio
+        alarmSound.load(); // Garante pré-carregamento
+        alarmSound.play().catch(error => {
+            console.warn("Falha ao reproduzir o alarme (possivelmente por falta de interação do usuário):", error);
+        });
     }
 
-    // Adiciona eventos para os botões de aumentar tempo (setas para cima)
-    document.querySelectorAll(".arrow-up").forEach((btn) => {
-        btn.addEventListener("click", function () {
-            if (this.nextElementSibling.id === "minutes") {
-                changeTime(this.nextElementSibling, 1, 60);
+    const minutesDisplay = document.getElementById("minutes");
+    const secondsDisplay = document.getElementById("seconds");
+    const startPauseBtn = document.getElementById("startPauseBtn");
+    const shortBreakBtn = document.getElementById("shortBreakBtn");
+    const longBreakBtn = document.getElementById("longBreakBtn");
+    const setPomodoroButton = document.getElementById("setPomodoro");
+
+    const pomodoroInput = document.getElementById("pomodoroTime");
+    const shortBreakInput = document.getElementById("shortBreakTime");
+    const longBreakInput = document.getElementById("longBreakTime");
+
+    function updateDisplay(seconds) {
+        const min = String(Math.floor(seconds / 60)).padStart(2, '0');
+        const sec = String(seconds % 60).padStart(2, '0');
+        minutesDisplay.textContent = min;
+        secondsDisplay.textContent = sec;
+    }
+
+    function startTimer() {
+        clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (isPaused) return;
+
+            if (currentSeconds > 0) {
+                currentSeconds--;
+                updateDisplay(currentSeconds);
             } else {
-                changeTime(this.nextElementSibling, 1, 60);
-            }
-        });
-    });
-
-    // Adiciona eventos para os botões de diminuir tempo (setas para baixo)
-    document.querySelectorAll(".arrow-down").forEach((btn) => {
-        btn.addEventListener("click", function () {
-            if (this.previousElementSibling.id === "minutes") {
-                changeTime(this.previousElementSibling, -1, 60);
-            } else {
-                changeTime(this.previousElementSibling, -1, 60);
-            }
-        });
-    });
-
-    // Botão que ativa ou para o alarme (cronômetro)
-    toggleAlarmButton.addEventListener("click", function () {
-        // Se já estiver rodando, para o cronômetro
-        if (isRunning) {
-            clearInterval(alarmInterval);
-            isRunning = false;
-            toggleAlarmButton.textContent = "Ativar Alarme";
-            toggleAlarmButton.classList.remove("running");
-            return;
-        }
-
-        // Inicia o cronômetro
-        isRunning = true;
-        toggleAlarmButton.textContent = "Parar";
-        toggleAlarmButton.classList.add("running");
-
-        // Captura o tempo inicial a partir da tela
-        let minutes = parseInt(minutesDisplay.textContent);
-        let seconds = parseInt(secondsDisplay.textContent);
-
-        // Inicia a contagem regressiva
-        alarmInterval = setInterval(() => {
-            if (isPaused) return; // Pausa temporária (ex: modo Pomodoro)
-
-            if (seconds > 0) {
-                seconds--;
-            } else if (minutes > 0) {
-                minutes--;
-                seconds = 59;
-            } else {
-                // Tempo finalizado: limpa intervalo e reseta botão
-                clearInterval(alarmInterval);
+                clearInterval(timerInterval);
                 isRunning = false;
-                toggleAlarmButton.textContent = "Ativar Alarme";
-                toggleAlarmButton.classList.remove("running");
-                return;
-            }
+                startPauseBtn.textContent = "Start";
 
-            // Atualiza o display de minutos e segundos
-            minutesDisplay.textContent = minutes.toString().padStart(2, "0");
-            secondsDisplay.textContent = seconds.toString().padStart(2, "0");
+                // Toca o som de alarme ao finalizar o tempo
+                playAlarm();
+
+                // Alterna entre modos: pomodoro → pausa, pausa → pomodoro
+                if (currentMode === "pomodoro") {
+                    completedPomodoros++;
+                    if (completedPomodoros % 4 === 0) {
+                        switchToLongBreak();
+                    } else {
+                        switchToShortBreak();
+                    }
+                } else if (currentMode === "shortBreak" || currentMode === "longBreak") {
+                    switchToPomodoro();
+                }
+            }
         }, 1000);
+    }
+
+    function switchToPomodoro() {
+        const pomodoroMin = parseInt(pomodoroInput.value) || 25;
+        currentSeconds = pomodoroMin * 60;
+        updateDisplay(currentSeconds);
+        currentMode = "pomodoro";
+    }
+
+    function switchToShortBreak() {
+        const shortBreakMin = parseInt(shortBreakInput.value) || 5;
+        currentSeconds = shortBreakMin * 60;
+        updateDisplay(currentSeconds);
+        currentMode = "shortBreak";
+    }
+
+    function switchToLongBreak() {
+        const longBreakMin = parseInt(longBreakInput.value) || 15;
+        currentSeconds = longBreakMin * 60;
+        updateDisplay(currentSeconds);
+        currentMode = "longBreak";
+    }
+
+    startPauseBtn.addEventListener("click", () => {
+        if (!isRunning) {
+            startTimer();
+            isRunning = true;
+            isPaused = false;
+            startPauseBtn.textContent = "Pausar";
+    
+            // 🔇 Para o alarme se ele estiver tocando
+            alarmSound.pause();
+            alarmSound.currentTime = 0;
+        } else if (!isPaused) {
+            isPaused = true;
+            startPauseBtn.textContent = "Retomar";
+        } else {
+            isPaused = false;
+            startPauseBtn.textContent = "Pausar";
+        }
+    });    
+
+    shortBreakBtn.addEventListener("click", () => {
+        clearInterval(timerInterval);
+        switchToShortBreak();
+        isRunning = false;
+        isPaused = false;
+        startPauseBtn.textContent = "Start";
     });
 
-    // Evento disparado para pausar o cronômetro (vindo de outro script)
+    longBreakBtn.addEventListener("click", () => {
+        clearInterval(timerInterval);
+        switchToLongBreak();
+        isRunning = false;
+        isPaused = false;
+        startPauseBtn.textContent = "Start";
+    });
+
+    setPomodoroButton.addEventListener("click", function () {
+        clearInterval(timerInterval);
+        switchToPomodoro();
+        isRunning = false;
+        isPaused = false;
+        startPauseBtn.textContent = "Start";
+    });
+
+    pomodoroInput.addEventListener("input", () => {
+        if (!isRunning && currentMode === "pomodoro") {
+            switchToPomodoro();
+        }
+    });
+
+    shortBreakInput.addEventListener("input", () => {
+        if (!isRunning && currentMode === "shortBreak") {
+            switchToShortBreak();
+        }
+    });
+
+    longBreakInput.addEventListener("input", () => {
+        if (!isRunning && currentMode === "longBreak") {
+            switchToLongBreak();
+        }
+    });
+
     document.addEventListener("pauseMainTimer", function () {
         isPaused = true;
     });
 
-    // Evento disparado para retomar o cronômetro (vindo de outro script)
     document.addEventListener("resumeMainTimer", function () {
         isPaused = false;
     });
+
+    document.addEventListener("resetToPomodoro", function () {
+        clearInterval(timerInterval);
+        switchToPomodoro();
+        isRunning = false;
+        isPaused = false;
+        startPauseBtn.textContent = "Start";
+    });
+
+    // Define o tempo inicial com base no que está exibido
+    currentSeconds = parseInt(minutesDisplay.textContent) * 60 + parseInt(secondsDisplay.textContent);
+    updateDisplay(currentSeconds);
 });

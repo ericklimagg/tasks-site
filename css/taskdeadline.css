@@ -13,11 +13,11 @@
 .taskdeadline-column {
   background-color: rgb(255, 174, 0); /* Tom de laranja para manter a identidade visual */
   padding: 12px;
-  border-radius: 8px; /* Cantos arredondados */
-  width: 22%; /* Distribui as colunas de forma proporcional */
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1); /* Sombra leve pra destacar */
-  cursor: auto; /* Não é clicável por padrão */
-  transition: transform 0.3s, background-color 0.3s ease; /* Animações suaves no hover */
+  border-radius: 8px; 
+  width: 22%; 
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1); 
+  cursor: auto; 
+  transition: transform 0.3s, background-color 0.3s ease; 
   margin-bottom: 5px;
   margin-top: 5px;
 }

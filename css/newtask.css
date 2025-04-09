@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  margin-top: 30px;
 }
 
 /* Botão para abrir o formulário de nova tarefa */
@@ -10,14 +11,14 @@
   background-color: rgb(63, 148, 63); /* Verde de destaque */
   color: white;
   border: none;
-  padding: 15px 30px; /* Deixa o botão grande e confortável de clicar */
-  font-size: 18px; /* Tamanho de fonte maior pro botão chamar mais atenção */
+  padding: 15px 30px;
+  font-size: 18px;
   cursor: pointer;
-  border-radius: 8px; /* Cantos arredondados pro visual mais moderno */
-  transition: background-color 0.3s, transform 0.3s; /* Animações suaves */
-  align-self: center; /* Centraliza o botão dentro do container flex */
-  margin-top: 20px; /* Espaço acima do botão */
-  width: 60%; /* Ocupa boa parte da largura disponível */
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+  align-self: center;
+  margin-top: 80px; /* Aumentado ainda mais */
+  width: 60%;
 }
 
 #novaTaskButton:hover {
@@ -33,15 +34,16 @@
 /* Formulário de nova tarefa */
 #newTaskForm {
   padding: 20px; /* Espaço interno ao redor do formulário */
+  width: 100%; /* Garante que o formulário ocupe toda a largura do container */
 }
 
 /* Configura o layout interno do formulário */
 .new-task-container form {
   width: 100%;
-  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Espaça os elementos igualmente */
+  gap: 5px; /* Adiciona espaço vertical entre os elementos do formulário */
 }
 
 /* Estilização dos rótulos (labels) dos campos */
@@ -80,6 +82,7 @@
   display: flex;
   align-items: flex-end;
   gap: 10px; /* Espaço entre os campos da linha */
+  margin-top: 5px; /* Aproxima do elemento anterior */
 }
 
 .date-field {
@@ -91,15 +94,16 @@
 .submit-button {
   background-color: rgb(63, 148, 63); /* Mesmo tom de verde usado no botão principal */
   border-radius: 8px;
-  transition: background-color 0.3s, transform 0.3s; /* Corrigido: vírgula estava errada */
+  transition: background-color 0.3s, transform 0.3s;
   width: 100%;
-  padding: 5px;
+  padding: 8px 12px; /* Aumentei um pouco o padding vertical */
   border: none;
   box-sizing: border-box;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   color: white;
+  margin-top: 0; /* Remove margens automáticas */
 }
 
 .submit-button:focus {
@@ -118,4 +122,3 @@
   height: 40px; /* Duas linhas de altura */
   resize: none; /* Impede o redimensionamento manual do campo */
 }
-

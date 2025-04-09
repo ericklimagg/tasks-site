@@ -1,19 +1,20 @@
 .alarm-container {
-  text-align: center; /* Centraliza o conteúdo dentro do container */
+  text-align: center; 
 }
 
 .time-display {
-  display: flex; /* Coloca os blocos de tempo (minutos e segundos) lado a lado */
-  justify-content: center; /* Alinha tudo ao centro horizontalmente */
-  font-size: 2rem; /* Deixa os números bem visíveis */
+  display: flex; 
+  justify-content: center; 
+  font-size: 2rem; 
 }
 
 .time-unit {
-  display: flex; /* Permite organizar setas e números em coluna */
-  flex-direction: column; /* Coloca a seta pra cima, número e seta pra baixo em ordem vertical */
-  align-items: center; /* Centraliza tudo horizontalmente dentro da coluna */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
 }
 
 .arrow {
-  cursor: pointer; /* Troca o cursor pra mãozinha, indicando que dá pra clicar */
+  cursor: pointer; 
 }
+

@@ -15,6 +15,7 @@
 .alarm-container {
   width: 44.77%;
   right: 0;
+  height: 180px; /* Reduzido para diminuir o espaço no formulário de nova tarefa */
 }
 
 .taskdeadline-container {
@@ -42,7 +43,7 @@
     width: 90%;
     margin: 10px auto;
     height: auto;
-    min-height: 200px;
+    min-height: 180px; /* Reduzido de 200px para 180px */
     padding: 15px 0;
   }
   
@@ -106,6 +107,7 @@
   .form-row {
     flex-direction: column;
     gap: 5px;
+    align-items: stretch;
   }
   
   .date-field {
@@ -115,9 +117,13 @@
   .social-links {
     gap: 20px;
   }
+  
+  /* Ajustes específicos para o formulário em telas pequenas */
+  #newTaskForm .submit-button {
+    margin-top: 5px;
+    width: 100%;
+  }
 }
-
-
 
 /* Ajustes no newtask.css */
 .new-task-container {
@@ -126,6 +132,14 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+}
+
+/* Ajustes no formulário de nova tarefa */
+.form-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: 8px; /* Adicionado para criar um espaço consistente antes do botão */
 }
 
 /* Ajustes no pausa.css */

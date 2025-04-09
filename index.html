@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Configurações básicas da página -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Temporizador</title>
+  <title>Tomate</title>
 
-  <!-- Importação dos arquivos de estilo (CSS) separados por funcionalidade -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/alarme.css" />
   <link rel="stylesheet" href="css/footer.css" />
@@ -15,90 +13,97 @@
   <link rel="stylesheet" href="css/newtask.css" />
   <link rel="stylesheet" href="css/taskdeadline.css" />
   <link rel="stylesheet" href="css/taskdisplay.css" />
-  <link rel="stylesheet" href="css/pausa.css" /> 
+  <link rel="stylesheet" href="css/pausa.css" />
   <link rel="stylesheet" href="css/metodo.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/config.css" />
 </head>
 <body>
-  <!-- Cabeçalho da página com título e botão de menu -->
   <header>
-    <h1><a href="index.html">Tasks</a></h1>
+    <h1><a href="index.html">🍅Tomate</a></h1>
     <div class="in_line">
-      <img class="img_header" id="img_menu"
-        src="https://images.icon-icons.com/2596/PNG/512/hamburger_button_menu_icon_155296.png" alt="Menu" />
+      <img
+        class="img_header"
+        id="img_menu"
+        src="https://images.icon-icons.com/2596/PNG/512/hamburger_button_menu_icon_155296.png"
+        alt="Menu"
+      />
     </div>
   </header>
 
   <main>
-    <!-- Botão para criar uma nova task -->
+
     <div class="new-task-container">
       <button id="novaTaskButton">Nova Task</button>
     </div>
 
-    <!-- Temporizador estilo Pomodoro com controles de tempo -->
-    <div class="alarm-container">
-      <div class="time-display">
-        <!-- Controles de minutos -->
-        <div class="time-unit">
-          <div class="arrow arrow-up">▲</div>
-          <span id="minutes">25</span>
-          <div class="arrow arrow-down">▼</div>
+    <div id="settingsModal" class="modal">
+      <div class="modal-content">
+        <br>
+        <h2>Configurações do Pomodoro</h2>
+        <label>Pomodoro (min): <input type="number" id="pomodoroTime" min="1" max="60" value="25" /></label>
+        <label>Pausa Curta (min): <input type="number" id="shortBreakTime" min="1" max="15" value="5" /></label>
+        <label>Pausa Longa (min): <input type="number" id="longBreakTime" min="5" max="30" value="15" /></label>
+        <div class="modal-buttons">
+          <button id="saveSettingsButton">Salvar</button>
         </div>
-        <span>:</span>
-        <!-- Controles de segundos -->
+      </div> 
+    </div>
+    
+    <!-- ALARM CONTAINER ATUALIZADO -->
+    <div class="alarm-container">
+      <!-- Botões em cima -->
+       <br>
+      <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; margin-top: 30px;">
+        <button id="setPomodoro">Pomodoro</button>
+        <button id="shortBreakBtn">Descanso Curto</button>
+        <button id="longBreakBtn">Descanso Longo</button>
+      </div>
+
+      <!-- Tempo centralizado -->
+      <div class="time-display" style="display: flex; justify-content: center; align-items: center; font-size: 64px; font-family: 'Courier New', monospace; font-weight: bold;">
         <div class="time-unit">
-          <div class="arrow arrow-up">▲</div>
-          <span id="seconds">00</span>
-          <div class="arrow arrow-down">▼</div>
+          <span id="minutes" style="font-size: 80px;">25</span>
+        </div>
+        <span style="font-size: 80px;" >:</span>
+        <div class="time-unit">
+          <span id="seconds" style="font-size: 80px;">00</span>
         </div>
       </div>
 
-      <!-- Botões de ativar alarme e pausar -->
-      <div style="display: flex; gap: 10px; margin-top: 10px;">
-        <button id="toggleAlarmButton">Ativar Alarme</button>
-        <button id="pauseButton">Pausar</button>
+      <!-- Botão start embaixo -->
+      <div style="display: flex; justify-content: center;">
+        <button id="startPauseBtn" >Start</button>
       </div>
     </div>
 
-    <!-- Seção exibida durante a pausa -->
     <div id="pauseBox">
       <p>Pausa</p>
       <div id="pauseTimer">05:00</div>
       <button id="resumeButton">Voltar ao Cronômetro</button>
     </div>
 
-    <!-- Colunas que separam as tasks por prazo -->
+    <br><br><br><br><br><br>
+
     <div class="taskdeadline-container">
-      <div class="taskdeadline-column" id="expired">
-        <h3>Expiradas</h3>
-      </div>
-      <div class="taskdeadline-column" id="6-dias">
-        <h3>Próximos 6 Dias</h3>
-      </div>
-      <div class="taskdeadline-column" id="30-dias">
-        <h3>Próximos 30 dias</h3>
-      </div>
-      <div class="taskdeadline-column" id="mais-30-dias">
-        <h3>Mais de 30 dias</h3>
-      </div>
+      <div class="taskdeadline-column" id="expired"><h3>Expiradas</h3></div>
+      <div class="taskdeadline-column" id="6-dias"><h3>Próximos 6 Dias</h3></div>
+      <div class="taskdeadline-column" id="30-dias"><h3>Próximos 30 dias</h3></div>
+      <div class="taskdeadline-column" id="mais-30-dias"><h3>Mais de 30 dias</h3></div>
     </div>
 
-    <!-- Container onde as tasks são exibidas dinamicamente -->
     <div id="tasks-display" style="display: none;"></div>
 
-    <!-- Resumo explicando como funciona o método Pomodoro -->
     <div class="pomodoro-resumo">
       <h2>Método Pomodoro 🍅</h2>
       <p>
         O <span class="destaque">Método Pomodoro</span> é uma técnica de gerenciamento de tempo criada por Francesco Cirillo no final dos anos 1980. 
         Seu nome vem dos cronômetros de cozinha em formato de tomate (“pomodoro” em italiano) que Cirillo usava para controlar o tempo de estudo.
       </p>
-    
       <p>
         A ideia central é trabalhar em ciclos de alta concentração chamados de “Pomodoros”, com pausas curtas entre eles. 
         Isso ajuda a manter o foco, reduzir a fadiga mental e aumentar a produtividade.
       </p>
-    
       <h3>Como funciona:</h3>
       <ul>
         <li><strong>1.</strong> Escolha uma tarefa que você deseja realizar.</li>
@@ -107,7 +112,6 @@
         <li><strong>4.</strong> Faça uma pausa curta de 5 minutos.</li>
         <li><strong>5.</strong> Após 4 Pomodoros, faça uma pausa mais longa (15 a 30 minutos).</li>
       </ul>
-    
       <h3>Benefícios:</h3>
       <ul>
         <li>✅ Melhora a concentração e o foco.</li>
@@ -116,7 +120,6 @@
         <li>✅ Ajuda no controle do tempo gasto em cada tarefa.</li>
         <li>✅ Previne a exaustão mental com pausas planejadas.</li>
       </ul>
-    
       <h3>Dicas para aproveitar melhor:</h3>
       <ul>
         <li>🔇 Elimine distrações antes de começar (silencie o celular, feche redes sociais, etc).</li>
@@ -124,39 +127,26 @@
         <li>📈 Ao final do dia, revise quantos Pomodoros você completou.</li>
         <li>🎯 Comece com tarefas pequenas para se adaptar à técnica.</li>
       </ul>
-    
       <p>
         Com o tempo, o Pomodoro se torna mais do que uma técnica: vira um estilo de trabalho focado, eficiente e saudável. Experimente e adapte os ciclos conforme sua rotina!
       </p>
     </div>
   </main>
 
-  <!-- Rodapé com links para LinkedIn e GitHub dos desenvolvedores -->
   <footer>
     <div class="footer-content">
       <div class="social-links">
-        <!-- Contato do Erick -->
         <div class="social-pair">
           <div class="icon-row">
-            <a href="https://www.linkedin.com/in/erick-lima-0ab586283/" target="_blank">
-              <img class="linkedin" src="https://img.icons8.com/ios11/512/linkedin.png" alt="LinkedIn Erick">
-            </a>
-            <a href="https://github.com/ericklimagg" target="_blank">
-              <img class="git" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png" alt="GitHub Erick">
-            </a>
+            <a href="https://www.linkedin.com/in/erick-lima-0ab586283/" target="_blank"><img class="linkedin" src="https://img.icons8.com/ios11/512/linkedin.png" alt="LinkedIn Erick"></a>
+            <a href="https://github.com/ericklimagg" target="_blank"><img class="git" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png" alt="GitHub Erick"></a>
           </div>
           <span>Erick</span>
         </div>
-
-        <!-- Contato do Felipe -->
         <div class="social-pair">
           <div class="icon-row">
-            <a href="https://www.linkedin.com/in/felipe-fernandes-eduardo-8865b4270/" target="_blank">
-              <img class="linkedin" src="https://img.icons8.com/ios11/512/linkedin.png" alt="LinkedIn Felipe">
-            </a>
-            <a href="https://github.com/lipino2005" target="_blank">
-              <img class="git" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png" alt="GitHub Felipe">
-            </a>
+            <a href="https://www.linkedin.com/in/felipe-fernandes-eduardo-8865b4270/" target="_blank"><img class="linkedin" src="https://img.icons8.com/ios11/512/linkedin.png" alt="LinkedIn Felipe"></a>
+            <a href="https://github.com/lipino2005" target="_blank"><img class="git" src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png" alt="GitHub Felipe"></a>
           </div>
           <span>Felipe</span>
         </div>
@@ -164,11 +154,13 @@
     </div>
   </footer>
 
-  <!-- Scripts responsáveis pela lógica do temporizador, tarefas e pausa -->
   <script src="js/alarm.js"></script>
   <script src="js/newtask.js"></script>
   <script src="js/taskstorage.js"></script>
   <script src="js/taskdisplay.js"></script>
   <script src="js/pausa.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/timer.js"></script>
 </body>
 </html>
