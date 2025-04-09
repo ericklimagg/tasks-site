@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     pomodoroInput.value = s.pomodoro;
     shortBreakInput.value = s.shortBreak;
     longBreakInput.value = s.longBreak;
-    pomodorosUntilLongBreakInput.value = s.pomodorosBeforeLongBreak;
   }
 
   loadSettingsIntoInputs(settings);
@@ -74,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
         pomodoro: parseInt(pomodoroInput.value),
         shortBreak: parseInt(shortBreakInput.value),
         longBreak: parseInt(longBreakInput.value),
-        pomodorosBeforeLongBreak: parseInt(pomodorosUntilLongBreakInput.value),
       };
 
       localStorage.setItem("pomodoroSettings", JSON.stringify(newSettings));

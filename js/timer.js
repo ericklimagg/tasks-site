@@ -46,20 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
       document.dispatchEvent(new Event("resumeMainTimer"));
     }
   
-    pauseButton.addEventListener("click", function () {
-      if (isPauseRunning) return;
-  
-      isPauseRunning = true;
-      isPausePaused = true;
-      pauseSeconds = 300;
-      updatePauseDisplay();
-      resumeButton.textContent = "Start";
-      pauseBox.style.display = "flex";
-      alarmContainer.style.display = "none";
-  
-      document.dispatchEvent(new Event("pauseMainTimer"));
-    });
-  
     resumeButton.addEventListener("click", function () {
       if (!isPauseRunning) return;
   
