@@ -1,4 +1,4 @@
-# Tasks - Sistema de Gerenciamento de Tarefas com Temporizador Pomodoro
+# Tomate - Sistema de Gerenciamento de Tarefas com Temporizador Pomodoro
 
 Um aplicativo web para gerenciamento de tarefas com temporizador integrado, desenvolvido para melhorar a produtividade e organização de atividades diárias.
 
